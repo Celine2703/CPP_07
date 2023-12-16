@@ -1,10 +1,10 @@
 SRCS = main.cpp
 
-HEAD = whatever.hpp
+HEAD = iter.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = whatever
+NAME = iter
 
 CC = c++ -Wall -Wextra -Werror -Iincludes -std=c++98
 

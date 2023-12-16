@@ -1,10 +1,10 @@
 SRCS = main.cpp
 
-HEAD = whatever.hpp
+HEAD = Array.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = whatever
+NAME = array
 
 CC = c++ -Wall -Wextra -Werror -Iincludes -std=c++98
 

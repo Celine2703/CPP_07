@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartin- <cmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 14:18:52 by cmartin-          #+#    #+#             */
-/*   Updated: 2023/12/16 17:27:13 by cmartin-         ###   ########.fr       */
+/*   Created: 2023/12/16 17:25:25 by cmartin-          #+#    #+#             */
+/*   Updated: 2023/12/16 17:27:42 by cmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
+
+#include <iostream>
 
 template <typename T>
-void	swap(T &a, T &b)
+void	iter(T *array, size_t length, void (*f)(T const &))
 {
-    T	tmp;
-
-    tmp = a;
-    a = b;
-    b = tmp;
-}
-
-template <typename T>
-T const &min(T const &a, T const &b)
-{
-    return (a < b ? a : b);
-}
-
-template <typename T>
-T const &max(T const &a, T const &b)
-{
-    return (a > b ? a : b);
+	for (size_t i = 0; i < length; i++)
+		f(array[i]);
 }
 
 #endif
