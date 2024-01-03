@@ -6,7 +6,7 @@
 /*   By: cmartin- <cmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:28:50 by cmartin-          #+#    #+#             */
-/*   Updated: 2023/12/16 18:29:16 by cmartin-         ###   ########.fr       */
+/*   Updated: 2024/01/03 20:53:36 by cmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ class Array
 
 	public:
 		Array(void) : _array(NULL), _length(0) {}
-		Array(unsigned int n) : _array(new T[n]), _length(n) {}
+		Array(unsigned int n) : _array(new T[n]), _length(n) {
+			for (size_t i = 0; i < _length; i++)
+				_array[i] = T(); // default constructor of the object/type T
+		}
 		Array(Array const &src) : _array(NULL), _length(0) { *this = src; }
-		~Array(void) { delete [] _array; }
+		~Array(void) { delete [] _array; std::cout << "Array destroyed" << std::endl; }
 
 		Array	&operator=(Array const &src)
 		{
@@ -50,3 +53,7 @@ class Array
 
 		size_t	size(void) const { return (_length); }
 };
+
+#endif
+
+// exception

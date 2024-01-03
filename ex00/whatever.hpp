@@ -6,7 +6,7 @@
 /*   By: cmartin- <cmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:18:52 by cmartin-          #+#    #+#             */
-/*   Updated: 2023/12/16 17:27:13 by cmartin-         ###   ########.fr       */
+/*   Updated: 2024/01/03 21:10:41 by cmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ void	swap(T &a, T &b)
     tmp = a;
     a = b;
     b = tmp;
+}
+
+template <typename T>
+void    swap(T const &a, T const &b)
+{
+    (void)a;
+    (void)b;
+    std::cout << "error: cannot modify a const value" << std::endl;
 }
 
 template <typename T>
